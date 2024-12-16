@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Princess</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url(kad.jpg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .envelope {
+            width: 300px;
+            height: 200px;
+            background-image: url('envelop.jpeg');
+            background-size: cover;
+            background-position: center;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .envelope h1 {
+            color: #ec9fec;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+        .card {
+            display: none;
+            width: 60%;
+            height: 80%;
+            background-color: #f8c0ef;
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            position: relative;
+        }
+        .page {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            transition: all 0.6s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+        .page.active {
+            left: 0;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: #e65c50;
+        }
+    </style>
+</head>
+<body>
+    <!-- Envelope -->
+    <div class="envelope" onclick="openCard()">
+        <h1>For My Princess</h1>
+    </div>
+
+    <!-- Card -->
+    <div class="card">
+        <!-- Page 1: Poem -->
+        <div class="page active" id="page1">
+            <h2>A Poem for You</h2>
+            <h3>You Are My Miracle</h3>
+            <p>
+                On the 18th of December, my heart took flight,<br>
+                You came and turned my dark to light.<br>
+                A miracle wrapped in love so true,<br>
+                My world began the day I met you.<br>
+
+                Through every storm, you’re my bright star,<br>
+                My miracle, perfect just as you are.<br>
+                I’ll love you forever, this promise I keep,<br>
+                You’re my dream, my soul, my heart’s deepest leap.<br>
+            </p>
+            <p style="margin-top: 20px; font-weight: bold;">I love you, babe ❤️</p>
+            <button class="button" onclick="nextPage(2)">Next</button>
+        </div>
+
+        <!-- Page 2: Expression of Love -->
+        <div class="page" id="page2">
+            <h2>My love ❤️</h2>
+            <p>
+                I just realized that today marks the day we first met, and honestly,<br>
+                it’s a moment I’ll never forget.<br>
+                From that very day, life brought me not just a great friend but someone who would go on to<br>
+                become my everything. The bond we share is something so special, something I cherish with all my heart.<br>
+                Thank you for being the incredible person you are and for bringing so much joy, love, and meaning into my life.<br>
+                I feel so lucky to have you, and I want you to know that I love you more than words can ever express.<br>
+            </p>
+            <p style="margin-top: 20px; font-weight: bold;">Forever yours, my love 💖</p>
+            <button class="button" onclick="nextPage(3)">Next</button>
+        </div>
+
+        <!-- Page 3: Beautiful Description 1 -->
+        <div class="page" id="page3">
+            <h2>My Promise to Treasure You Forever ❤️</h2>
+            <p>
+                You may not be everything in this world, but to me, you are that rare,<br> 
+                precious treasure that not everyone is lucky enough to have.<br> 
+                You’re the kind of beauty and light that can’t be measured or replaced,<br> 
+                someone so special that I feel incredibly fortunate to call you mine.<br> 
+                You’re not just someone I love—you’re the reason my world feels complete,<br>
+                 and I know how rare it is to find someone as extraordinary as you.<br>
+            </p>
+            <button class="button" onclick="nextPage(4)">Next</button>
+        </div>
+
+        <!-- Page 4: Beautiful Description 2 -->
+        <div class="page" id="page4">
+            <h2>✨</h2>
+            <p>
+                I know I’ve hurt you in the past, and I can’t even begin to express how sorry I am for the times I caused you pain.<br> 
+                Those moments weigh heavy on my heart because you deserve nothing but happiness, love, and care.<br> 
+                Despite my mistakes, you’ve stood by me, forgiven me, and shown me what true love looks like.<br> 
+                I can’t undo the hurt, but I promise you this: I will never hurt you again.<br>
+                I will do everything in my power to be the person who lifts you up, cherishes you, and protects your heart.<br>
+            </p>
+            <button class="button" onclick="nextPage(5)">Next</button>
+        </div>
+
+        <!-- Page 5: Beautiful Description 3 -->
+        <div class="page" id="page5">
+            <h2>💖</h2>
+            <p>
+                You are my everything—my anchor, my light, and my greatest blessing.<br> 
+                I want you to know that I don’t take your love for granted.<br>
+                From this day forward,<br> 
+                I’ll show you, not just with words but with actions,<br>
+                how much you mean to me.<br> 
+                You are my irreplaceable treasure, and<br> 
+                I will spend every moment of my life proving that you made the right choice in loving me.<br>
+            </p>
+            <p style="margin-top: 20px; font-weight: bold;">You are my everything ❤️</p>
+            <button class="button" onclick="nextPage(6)">Next</button>
+        </div>
+
+        <!-- Page 6: Surprise -->
+        <div class="page" id="page6">
+            <h2>Surprise!</h2>
+            <button class="button" onclick="showSurprise()">Press Me</button>
+        </div>
+    </div>
+
+    <script>
+        function openCard() {
+            document.querySelector('.envelope').style.display = 'none';
+            document.querySelector('.card').style.display = 'block';
+        }
+
+        function nextPage(pageNumber) {
+            document.querySelectorAll('.page').forEach((page) => {
+                page.classList.remove('active');
+            });
+            document.getElementById(`page${pageNumber}`).classList.add('active');
+        }
+
+        function showSurprise() {
+            alert("My love is always for you. I love you 💖");
+        }
+    </script>
+</body>
+</html>
